@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @picture.image %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%=image_tag @picture.image_url %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @picture.Content %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+<% unless @picture.favorite_user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'Unlike ', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'like ', favorites_path(picture_id: @favorite.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+
+<% end %>
