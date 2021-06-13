@@ -23,6 +23,7 @@ class PicturesController < ApplicationController
   # POST /pictures or /pictures.json
   def create
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id # renseigne le champ user_id de l'objet Picture 
 
     respond_to do |format|
       if @picture.save
