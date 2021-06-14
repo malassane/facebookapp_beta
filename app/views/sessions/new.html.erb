@@ -1,9 +1,40 @@
-<h1>Sessions#new</h1>
-<h1>Log in</h1> 
- <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %> 
- <%= f.label :email %> 
- <%= f.email_field :email %> 
- <%= f.label :password %> 
- <%= f.password_field :password %><br><br>
- <%= f.submit "Log in" %> 
- <% end %>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TwitterClone</title>
+    </head>
+
+    <body>
+        <div class= container >
+            <div class=header-container>
+                <header class = header>
+                    <ul>
+                        <h4>APPLICATION FACEBOOK - ETUDIANT MAMADOU ALASSANE</h4>
+                    </ul>
+                </header>
+            </div>
+      
+              
+                    
+               
+            <div>
+                <h1>Log in</h1> 
+                <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %> 
+                <%= f.label :email %> 
+                <%= f.email_field :email %> 
+                <%= f.label :password %> 
+                <%= f.password_field :password %><br><br>
+                <%= f.submit "Log in" %> 
+                <br>
+                <% end %>
+            </div>
+            <div class=header-container>
+                <footer class= footer>
+                    <br>
+                    <p>DIVE INTO CODE -- Ruby on Rails </p>
+                    <p>© 2015  -  <%= Date.today.year %> DIVE INTO CODE Corp.</p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
