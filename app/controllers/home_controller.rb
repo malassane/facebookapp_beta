@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
     def index
-    end 
-
-end 
+        redirect_to new_session_path
+    end
+end

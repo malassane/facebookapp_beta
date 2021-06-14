@@ -2,12 +2,12 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @picture.image %>
+  <%=image_tag @picture.image_url %>
 </p>
 
 <p>
   <strong>Image url:</strong>
-  <%=image_tag @picture.image_url %>
+  <%= @picture.image  %>
 </p>
 
 <p>
@@ -16,8 +16,7 @@
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
-
+<%= link_to 'Back', pictures_path %> |
 <% unless @picture.user_id == current_user.id %>
 
   <% if @favorite.present? %>
@@ -26,7 +25,7 @@
 
   <% else %>
 
-    <%= link_to 'like ', favorites_path(picture_id: @favorite.id), method: :post, class: 'btn btn-primary' %>
+    <%= link_to 'like ', favorites_path, method: :post, class: 'btn btn-primary' %>
 
   <% end %>
 

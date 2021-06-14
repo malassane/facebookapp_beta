@@ -10,20 +10,40 @@
   </head>
 
   <body>
+  <div class = container >
+    <div class=header-container>
+      <header class = header>
+        <ul>
+        <h4>APPLICATION FACEBOOK - ETUDIANT MAMADOU ALASSANE</h4>
+        </ul>
+      </header>
+    </div>
 
+    
     <% flash.each do |key, value| %> 
-    <%= content_tag(:div, value, class: "#{key}") %> 
+      <%= content_tag(:div, value, class: "#{key}") %> 
     <% end %> 
     
     <% if logged_in? %> 
-      <%= link_to "Profile", user_path(current_user.id) %> 
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %> 
+      <%= link_to "Profile", user_path(current_user.id) %>   | 
+      <%= link_to "Deconnexion", session_path(current_user.id), method: :delete %> 
     <% else %> 
-      <%= link_to "Sign up", new_user_path %> 
-      <%= link_to "Login", new_session_path %> 
+      <%= link_to "Creer un Compte", new_user_path %>  | 
+      <%= link_to "Se Connecter", new_session_path %> 
     <% end %> 
 
    
     <%= yield %>
+     
+    <div class=header-container>
+      <footer class= footer>
+          <br>
+        <p>DIVE INTO CODE -- Ruby on Rails </p>
+        <p>© 2015  -  <%= Date.today.year %> DIVE INTO CODE Corp.</p>
+      </footer>
+    </div>
+
+    </div>
+    
   </body>
 </html>

@@ -9,7 +9,7 @@
             <div class=header-container>
                 <header class = header>
                     <ul>
-                        <h4>APPLICATION TWEETTERCLONE - ETUDIANT MAMADOU ALASSANE  </h4>
+                        <h4>APPLICATION INDEX PAGE- ETUDIANT MAMADOU ALASSANE  </h4>
                     </ul>
                 </header>
             </div>
@@ -17,22 +17,10 @@
         <p><%= notice %></p>
             
                 
-            <%=link_to ' AJOUTEZ UN TWEET ', new_post_path %></td>
-                
+            <%=link_to ' Ouvrir une session ', new_session_path %></td>
+              
                  
-            <div>
-                <table>
-                    <% @post.each do |t| %>
-                        <tr>
-                            <td><%= t.contenu %></td>
-                            <td><%= link_to 'Delete the tweet', post_path(t.id), method: :delete,  data: { confirm: 'Voulez vous vraiment supprimer ce tweet?' } %></td>
-                            <td></td>
-                            <td><%= link_to "Edit the tweet", edit_post_path(t.id) %></td>
-                        </tr>
-                     <br>
-                    <% end %>
-                </table>
-            </div>
+            
             <div class=header-container>
                 <footer class= footer>
                     <p>DIVE INTO CODE -- Ruby on Rails </p>
